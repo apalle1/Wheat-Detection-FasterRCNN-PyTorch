@@ -33,9 +33,8 @@ Finally, comes the ```R-CNN module```, which uses that information to:
 
 In practice, very few people train an entire Convolutional Network from scratch (with random initialization), because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest. 
 
-The backbones usually have two parts: 1, feature extraction module; 2, classification head. If the backbone stores the feature extraction part as an internal variable (self.features = nn.Sequential(..) or something similar, then you can do this:
+**Scenario-1 (Contains feature extraction module and classification head seperately)**
 
-**Scenario-1**
 ```
 >>> pretrained_mobilenet_v2 = torchvision.models.mobilenet_v2(pretrained=True)
 >>> print(pretrained_mobilenet_v2)
@@ -328,6 +327,8 @@ MobileNetV2(
   )
 )
 ```
+
+**Scenario-2 (Doest not contain feature extraction module and classification head seperately)**
 
 ```
 >>> pretrained_resnext50_32x4d = torchvision.models.resnext50_32x4d(pretrained=True)
