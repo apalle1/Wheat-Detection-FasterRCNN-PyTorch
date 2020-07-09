@@ -109,17 +109,25 @@ ResNet(
   (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
   (fc): Linear(in_features=512, out_features=1000, bias=True)
 )
-
+```
+```
 print(backbone.fc)
+```
 
+```
 Linear(in_features=512, out_features=1000, bias=True)
-
+```
+```
 print(backbone.fc.in_features)
+```
+```
 512
-
+```
+```
 backbone.fc = nn.Linear(512, 2)
 print(backbone.fc)
-
+```
+```
 Linear(in_features=512, out_features=2, bias=True)
 ```
 
