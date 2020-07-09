@@ -22,9 +22,8 @@ In practice, very few people train an entire Convolutional Network from scratch 
 
 ```
 >>> backbone = torchvision.models.resnet18(pretrained=True)
-print(backbone)
-```
-```
+>>> print(backbone)
+
 ResNet(
   (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
   (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
@@ -109,25 +108,15 @@ ResNet(
   (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
   (fc): Linear(in_features=512, out_features=1000, bias=True)
 )
-```
-```
-print(backbone.fc)
-```
 
-```
+>>> print(backbone.fc)
 Linear(in_features=512, out_features=1000, bias=True)
-```
-```
-print(backbone.fc.in_features)
-```
-```
+
+>>> print(backbone.fc.in_features)
 512
-```
-```
-backbone.fc = nn.Linear(512, 2)
-print(backbone.fc)
-```
-```
+
+>>> backbone.fc = nn.Linear(512, 2)
+>>> print(backbone.fc)
 Linear(in_features=512, out_features=2, bias=True)
 ```
 
