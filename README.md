@@ -16,9 +16,18 @@ The average precision of a single image is calculated as the mean of the above p
 
 Lastly, the score returned by the competition metric is the mean taken over the individual average precisions of each image in the test dataset.
 
+# Faster R-CNN 
+
+The input images are represented as \mathit{Height} \times \mathit{Width} \times \mathit{Depth}Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
+
+
+
 # Transfer Learning
 
-In practice, very few people train an entire Convolutional Network from scratch (with random initialization), because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest.
+In practice, very few people train an entire Convolutional Network from scratch (with random initialization), because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest. These two major transfer learning scenarios look as follows:
+
+* **Finetuning the convnet**: Instead of random initializaion, we initialize the network with a pretrained network, like the one that is trained on imagenet 1000 dataset. Rest of the training looks as usual.
+* **ConvNet as fixed feature extractor**: Here, we will freeze the weights for all of the network except that of the final fully connected layer. This last fully connected layer is replaced with a new one with random weights and only this layer is trained.
 
 ```
 >>> backbone = torchvision.models.resnet18(pretrained=True)
