@@ -18,13 +18,13 @@ Lastly, the score returned by the competition metric is the mean taken over the 
 
 # Faster R-CNN 
 
-The architecture of Faster R-CNN is complex because it has several moving parts. The input image of shape ```Height × Width × Depth``` is passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part. This technique is very commonly used in the context of Transfer Learning, especially for training a classifier on a small dataset using the weights of a network trained on a bigger dataset.
+The architecture of Faster R-CNN is complex because it has several moving parts. The input image of shape ```Height × Width × Depth``` is passed through a **pre-trained CNN** up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part. This technique is very commonly used in the context of Transfer Learning, especially for training a classifier on a small dataset using the weights of a network trained on a bigger dataset.
 
-Next, we have what is called a Region Proposal Network (RPN, for short). Using the features that the CNN computed, it is used to find up to a predefined number of regions (bounding boxes), which may contain objects.
+Next, we have what is called a **Region Proposal Network (RPN, for short)**. Using the features that the CNN computed, it is used to find up to a predefined number of regions (bounding boxes), which may contain objects.
 
-After having a list of possible relevant objects and their locations in the original image, it becomes a more straightforward problem to solve. Using the features extracted by the CNN and the bounding boxes with relevant objects, we apply Region of Interest (RoI) Pooling and extract those features which would correspond to the relevant objects into a new tensor.
+After having a list of possible relevant objects and their locations in the original image, it becomes a more straightforward problem to solve. Using the features extracted by the CNN and the bounding boxes with relevant objects, we apply **Region of Interest (RoI) Pooling** and extract those features which would correspond to the relevant objects into a new tensor.
 
-Finally, comes the R-CNN module, which uses that information to:
+Finally, comes the **R-CNN module**, which uses that information to:
 
 * Classify the content in the bounding box (or discard it, using “background” as a label).
 * Adjust the bounding box coordinates (so it better fits the object).
