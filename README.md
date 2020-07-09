@@ -15,3 +15,13 @@ At each threshold value t, a precision value is calculated based on the number o
 The average precision of a single image is calculated as the mean of the above precision values at each IoU threshold.
 
 Lastly, the score returned by the competition metric is the mean taken over the individual average precisions of each image in the test dataset.
+
+# TRANSFER LEARNING
+
+In practice, very few people train an entire Convolutional Network from scratch (with random initialization), because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest.
+
+https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+
+https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html
+
+
