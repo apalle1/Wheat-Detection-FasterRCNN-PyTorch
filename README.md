@@ -1,7 +1,7 @@
 # What should I expect the data format to be?
 The data is images of wheat fields, with bounding boxes for each identified wheat head. Not all images include wheat heads / bounding boxes. The images were recorded in many locations around the world.
 
-The CSV data is simple - the image ID matches up with the filename of a given image, and the width and height of the image are included, along with a bounding box. There is a row in train.csv for each bounding box. Not all images have bounding boxes.
+The CSV data is simple - the image ID matches up with the filename of a given image, and bounding boxes are provided in COCO format: (x-top left, y-top left, width, height). There is a row in train.csv for each bounding box. Not all images have bounding boxes. 
 
 # What am I predicting?
 You are attempting to predict bounding boxes around each wheat head in images that have them. If there are no wheat heads, you must predict no bounding boxes.
