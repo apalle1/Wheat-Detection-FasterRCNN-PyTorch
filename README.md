@@ -49,6 +49,8 @@ In practice, very few people train an entire Convolutional Network from scratch 
 >>> print(pretrained_resnext50_32x4d)
 ```
 
+# Resources
+
 https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/
 
 https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
