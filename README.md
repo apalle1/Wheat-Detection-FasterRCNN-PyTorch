@@ -40,6 +40,7 @@ In practice, very few people train an entire Convolutional Network from scratch 
 >>> print(pretrained_mobilenet_v2)
 >>> backbone = pretrained_mobilenet_v2.features
 >>> #print(backbone)
+```
 
 **Scenario-2 (Eg:- resnext50_32x4d doest not contain feature extraction module and classification head seperately)**
 
