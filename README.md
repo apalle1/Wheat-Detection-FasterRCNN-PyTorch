@@ -18,6 +18,8 @@ Lastly, the score returned by the competition metric is the mean taken over the 
 
 # Faster R-CNN 
 
+https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+
 The architecture of Faster R-CNN is complex because it has several moving parts. The input image of shape ```Height × Width × Depth``` is passed through a ```pre-trained CNN``` up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part. This technique is very commonly used in the context of Transfer Learning, especially for training a classifier on a small dataset using the weights of a network trained on a bigger dataset.
 
 Next, we have what is called a ```Region Proposal Network (RPN, for short)```. Using the features that the CNN computed, it is used to find up to a predefined number of regions (bounding boxes), which may contain objects.
